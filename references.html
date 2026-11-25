@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References · Neuro-Fuzzy VASARI Glioma Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<style>
+:root {
+  /* Layout: one reading column of framed panels, drawn like the study's own figures
+     (pale panel, dashed blue frame, lettered navy badges, blue caps labels). */
+  --page: #FFFFFF;
+  --panel: #F7FAFE;
+  --ink: #1E2F4D;
+  --muted: #4C5C79;
+  --blue: #3C78B5;
+  --blue-deep: #2C5F96;
+  --line: #D6E3F7;
+  --soft: #E8F1FB;
+  --green: #2C7F4E;
+  --green-soft: #E2F3E8;
+  --pink: #B03A80;
+  --pink-soft: #FAE2EF;
+  --purple-soft: #EBDDF8;
+  --font: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; }
+img { max-width: 100%; }
+a { color: var(--blue-deep); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.stack { display: flex; flex-direction: column; gap: 28px; }
+.label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-deep); }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+/* header */
+.top { background: var(--ink); color: #FFFFFF; padding: 44px 0 40px; }
+.top .wrap { display: flex; flex-direction: column; gap: 18px; }
+.top .label { color: #A9CDF2; }
+.top h1 { font-size: clamp(1.7rem, 4.4vw, 3rem); line-height: 1.12; font-weight: 700; }
+.lead { font-size: 1.12rem; max-width: 62ch; color: #E3ECF8; }
+.authors { font-size: 1.02rem; line-height: 1.6; color: #FFFFFF; }
+.authors b { font-weight: 700; }
+.authors sup, .aff sup { font-size: 0.68em; line-height: 0; }
+.aff { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr)); gap: 2px 28px; font-size: 0.84rem; color: #D7E6F7; }
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; }
+nav.jump a { color: #FFFFFF; text-decoration: none; border: 1.5px solid #6C99C7; border-radius: 999px; padding: 6px 14px; font-size: 0.9rem; font-weight: 500; }
+nav.jump a:hover { background: #2C4268; }
+
+/* key facts */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+.fact { background: var(--panel); border: 1.5px solid var(--line); border-radius: 8px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.fact .num { font-size: 2rem; line-height: 1.1; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.fact .num small { font-size: 1.05rem; font-weight: 600; color: var(--blue-deep); }
+.fact p { font-size: 0.95rem; color: var(--muted); }
+
+/* panels */
+main { padding: 36px 0 56px; }
+.panel { background: var(--panel); border: 2px dashed var(--blue); border-radius: 6px; padding: 26px 26px 30px; display: flex; flex-direction: column; gap: 20px; scroll-margin-top: 12px; }
+.head { display: flex; align-items: center; gap: 14px; }
+.badge { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.05rem; }
+.panel h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.2; font-weight: 700; }
+.prose { display: flex; flex-direction: column; gap: 12px; max-width: 68ch; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
+.cols.two { grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); }
+.tables { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(560px, 100%), 1fr)); gap: 16px; }
+.card { background: #FFFFFF; border: 1.5px solid var(--blue); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.card h3 { background: var(--line); padding: 10px 16px; font-size: 1.02rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.card h3 .badge { width: 28px; height: 28px; font-size: 0.85rem; }
+.card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.96rem; }
+.card .body .label { font-size: 0.72rem; }
+
+/* figures */
+figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.scroller { overflow-x: auto; background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 8px; }
+.scroller img { display: block; width: 100%; min-width: 980px; height: auto; }
+.scroller.zoomed img { min-width: 2300px; }
+.figbar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+figcaption { font-size: 0.92rem; color: var(--muted); max-width: 80ch; }
+figcaption b { color: var(--ink); }
+button.zoom { font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--blue-deep); background: #FFFFFF; border: 1.5px solid var(--blue); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+button.zoom:hover { background: var(--soft); }
+
+/* rule card */
+.rule { background: #FFFFFF; border: 1.5px solid var(--blue); border-radius: 8px; overflow: hidden; max-width: 560px; }
+.rule .cap { background: var(--line); padding: 10px 16px; font-weight: 700; }
+.rule .body { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; font-variant-numeric: tabular-nums; }
+.rule .kw { font-weight: 700; display: inline-block; min-width: 3.4em; }
+.rule .then { border-top: 1.5px solid var(--line); padding-top: 10px; margin-top: 6px; }
+.rule i { font-style: italic; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border-radius: 999px; padding: 4px 12px; font-size: 0.88rem; font-weight: 600; border: 1.5px solid; }
+.chip.ok { color: var(--green); background: var(--green-soft); border-color: #3FA466; }
+.chip.diff { color: var(--pink); background: var(--pink-soft); border-color: #D9549F; }
+.chip.info { color: var(--blue-deep); background: var(--soft); border-color: var(--blue); }
+
+/* tables */
+.tablebox { overflow-x: auto; background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+caption { caption-side: top; text-align: left; padding: 12px 16px 8px; font-weight: 700; }
+th, td { padding: 9px 16px; text-align: right; border-top: 1px solid var(--line); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { background: var(--soft); font-weight: 700; border-top: 0; }
+.note { font-size: 0.88rem; color: var(--muted); }
+
+/* team */
+.people { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px 16px; }
+.people li { background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; gap: 14px; }
+.people li img { width: 72px; height: 72px; flex: none; border-radius: 50%; object-fit: cover; border: 2px solid var(--line); background: var(--soft); }
+.people li b { display: block; font-weight: 600; line-height: 1.3; }
+.people li span { display: block; font-size: 0.84rem; line-height: 1.35; color: var(--muted); }
+.people li span.role { color: var(--blue-deep); font-weight: 500; font-size: 0.9rem; }
+.afflist { margin: 0; padding-left: 1.3em; font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 3px; }
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 36px; background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 8px; padding: 18px 20px; }
+.logos img { height: 52px; width: auto; }
+.logos img.tall { height: 78px; }
+.refs { margin: 0; padding: 0; list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 10px; max-width: 86ch; }
+.refs li { counter-increment: ref; display: grid; grid-template-columns: 2.6em 1fr; font-size: 0.96rem; }
+.refs li::before { content: "[" counter(ref) "]"; font-weight: 700; color: var(--blue-deep); font-variant-numeric: tabular-nums; }
+.refs.plain li { grid-template-columns: 1fr; }
+.refs.plain li::before { content: none; }
+.refs a { overflow-wrap: anywhere; }
+.cite a { overflow-wrap: anywhere; }
+.cite { background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 8px; padding: 14px 16px; font-size: 0.95rem; }
+footer { background: var(--ink); color: #D7E6F7; padding: 26px 0 34px; font-size: 0.9rem; }
+footer .wrap { display: flex; flex-direction: column; gap: 10px; }
+footer b { color: #FFFFFF; }
+footer a { color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="label">Poster · iHEALTH Annual Workshop 2026</div>
+    <h1>References</h1>
+    <p class="lead">Medical LLM Grounded in Neuro-Fuzzy VASARI Inference for Interpretable Glioma Characterization in MRI</p>
+    <nav class="jump" aria-label="Pages">
+      <a href="./">Study page</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap stack">
+
+    <section class="panel" id="references">
+      <div class="label">Cited on the poster</div>
+      <ol class="refs">
+        <li><span>McFaline-Figueroa, J. R. and Lee, E. Q. (2018). Brain tumors. The American Journal of Medicine, 131(8):874–882.</span></li>
+        <li><span>Ali, S. et al. (2023). Explainable artificial intelligence (XAI): What we know and what is left to attain trustworthy artificial intelligence. Information Fusion, 99:101805.</span></li>
+        <li><span>Lambin, P. et al. (2017). Radiomics: the bridge between medical imaging and personalized medicine. Nature Reviews Clinical Oncology, 14(12):749–762.</span></li>
+        <li><span>van Timmeren, J. E. et al. (2020). Radiomics in medical imaging—“how-to” guide and critical reflection. Insights into Imaging, 11:91.</span></li>
+        <li><span>Jain, R. et al. (2014). Outcome prediction in patients with glioblastoma by using imaging, clinical, and genomic biomarkers: focus on the nonenhancing component of the tumor. Radiology, 272(2):484–493.</span></li>
+        <li><span>Ruffle, J. K. et al. (2024). VASARI-auto: Equitable, efficient, and economical featurisation of glioma MRI. NeuroImage: Clinical, 44:103668.</span></li>
+        <li><span>Allende-Cid, H., Veloz, A., Salas, R., Chabert, S. and Allende, H. (2008). Self-organizing neuro-fuzzy inference system. In Progress in Pattern Recognition, Image Analysis and Applications (CIARP 2008), Lecture Notes in Computer Science 5197, pages 429–436. Springer.</span></li>
+        <li><span>Sellergren, A. et al. (2025). MedGemma technical report. arXiv preprint arXiv:2507.05201.</span></li>
+      </ol>
+      <div class="label">Data and tools</div>
+      <ul class="refs plain">
+        <li><span>Baid, U. et al. (2023). RSNA-ASNR-MICCAI-BraTS-2021 dataset. <a href="https://doi.org/10.7937/jc8x9874">https://doi.org/10.7937/jc8x9874</a></span></li>
+        <li><span>Gitonga, M. (2023). Multiclass MRI brain tumor segmentation using 3D attention-based U-Net. arXiv preprint arXiv:2305.06203.</span></li>
+        <li><span>van Griethuysen, J. J. M. et al. (2017). Computational radiomics system to decode the radiographic phenotype. Cancer Research, 77(21):e104–e107.</span></li>
+        <li><span>Ollama (2025). Ollama: Get up and running with large language models locally. <a href="https://ollama.com">https://ollama.com</a></span></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Contact</b> · Esthefanía Astargo · <a href="mailto:esthefania.astargo@postgrado.uv.cl">esthefania.astargo@postgrado.uv.cl</a></p>
+  </div>
+</footer>
+</body>
+</html>
