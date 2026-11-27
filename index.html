@@ -158,7 +158,7 @@ footer a { color: #FFFFFF; }
       <a href="#results">Results</a>
       <a href="#limits">Limitations</a>
       <a href="#team">Team</a>
-      <a href="references.html">References</a>
+      <a href="#references">References</a>
     </nav>
   </div>
 </header>
@@ -329,12 +329,35 @@ footer a { color: #FFFFFF; }
       </div>
     </section>
 
+    <section class="panel" id="references">
+      <div class="head"><div class="badge">7</div><h2>References</h2></div>
+      <div class="label">Cited on the poster</div>
+      <ol class="refs">
+        <li><span>McFaline-Figueroa, J. R. and Lee, E. Q. (2018). Brain tumors. The American Journal of Medicine, 131(8):874–882.</span></li>
+        <li><span>Ali, S. et al. (2023). Explainable artificial intelligence (XAI): What we know and what is left to attain trustworthy artificial intelligence. Information Fusion, 99:101805.</span></li>
+        <li><span>Lambin, P. et al. (2017). Radiomics: the bridge between medical imaging and personalized medicine. Nature Reviews Clinical Oncology, 14(12):749–762.</span></li>
+        <li><span>van Timmeren, J. E. et al. (2020). Radiomics in medical imaging—“how-to” guide and critical reflection. Insights into Imaging, 11:91.</span></li>
+        <li><span>Jain, R. et al. (2014). Outcome prediction in patients with glioblastoma by using imaging, clinical, and genomic biomarkers: focus on the nonenhancing component of the tumor. Radiology, 272(2):484–493.</span></li>
+        <li><span>Ruffle, J. K. et al. (2024). VASARI-auto: Equitable, efficient, and economical featurisation of glioma MRI. NeuroImage: Clinical, 44:103668.</span></li>
+        <li><span>Allende-Cid, H., Veloz, A., Salas, R., Chabert, S. and Allende, H. (2008). Self-organizing neuro-fuzzy inference system. In Progress in Pattern Recognition, Image Analysis and Applications (CIARP 2008), Lecture Notes in Computer Science 5197, pages 429–436. Springer.</span></li>
+        <li><span>Sellergren, A. et al. (2025). MedGemma technical report. arXiv preprint arXiv:2507.05201.</span></li>
+        <li><span>Ervik, M. et al. (2026). Global Cancer Observatory: Cancer Today (2024 estimates, version 1.0). Lyon, France: International Agency for Research on Cancer. <a href="https://gco.iarc.who.int/today">https://gco.iarc.who.int/today</a></span></li>
+      </ol>
+      <div class="label">Data and tools</div>
+      <ul class="refs plain">
+        <li><span>Baid, U. et al. (2023). RSNA-ASNR-MICCAI-BraTS-2021 dataset. <a href="https://doi.org/10.7937/jc8x9874">https://doi.org/10.7937/jc8x9874</a></span></li>
+        <li><span>Gitonga, M. (2023). Multiclass MRI brain tumor segmentation using 3D attention-based U-Net. arXiv preprint arXiv:2305.06203.</span></li>
+        <li><span>van Griethuysen, J. J. M. et al. (2017). Computational radiomics system to decode the radiographic phenotype. Cancer Research, 77(21):e104–e107.</span></li>
+        <li><span>Ollama (2025). Ollama: Get up and running with large language models locally. <a href="https://ollama.com">https://ollama.com</a></span></li>
+      </ul>
+    </section>
+
   </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <p><b>Contact</b> · Esthefanía Astargo · <a href="mailto:esthefania.astargo@postgrado.uv.cl">esthefania.astargo@postgrado.uv.cl</a></p>
+    <p><b>Contact</b> · Esthefanía Astargo · <a href="mailto:esthefania.astargo@postgrado.uv.cl">esthefania.astargo@postgrado.uv.cl</a> · <a href="https://www.linkedin.com/in/esthefania-astargo/" target="_blank" rel="noopener">LinkedIn</a></p>
     <p><b>Funding</b> · ANID through FONDECYT 1221938 and 1231268, FONDECYT Postdoctoral 3250439, FONDEF VIU 25P0233, the Millennium Science Initiative Program ICN2021_004 and the National Doctoral Scholarship 21263565, with support from the CAPES-AUGM program (Edital 16/2024).</p>
     <p><b>Data</b> · MRI studies from the public BraTS 2021 dataset.</p>
   </div>
@@ -343,7 +366,6 @@ footer a { color: #FFFFFF; }
 <script>
 function showHash() {
   var id = (location.hash || '').slice(1);
-  if (id === 'references') { location.replace('references.html'); return; }
   var el = id ? document.getElementById(id) : null;
   if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
 }
